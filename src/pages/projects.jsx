@@ -1,59 +1,61 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head"
+import Image from "next/image"
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import euphoria from '@/images/logos/euphoria.png'
-import culcha from '@/images/logos/culcha.png'
-import sangfroid from '@/images/logos/sangfroid.png'
-import parq from '@/images/logos/parq.png'
-import kriptos from '@/images/logos/kriptos.png'
-import femlove from '@/images/logos/femlove.png'
+import { Card } from "@/components/Card"
+import { SimpleLayout } from "@/components/SimpleLayout"
+import euphoria from "@/images/logos/euphoria.png"
+import culcha from "@/images/logos/culcha.png"
+import sangfroid from "@/images/logos/sangfroid.png"
+import parq from "@/images/logos/parq.png"
+import kriptos from "@/images/logos/kriptos.png"
+import femlove from "@/images/logos/femlove.png"
+import { Container } from "@/components/Container"
+import Testimonials from "@/components/Testimonials"
 
 const projects = [
   {
-    name: 'Femlove',
+    name: "Femlove",
     description:
-      'A website that helps women improve their health and wellbeing. Using Next.js and Sanity as the CMS, I made sure that the site is fast, easy to use, and full of valuable content. ',
-    link: { href: 'https://femlove.blog/', label: 'femlove.blog' },
+      "A website that helps women improve their health and wellbeing. Using Next.js and Sanity as the CMS, I made sure that the site is fast, easy to use, and full of valuable content. ",
+    link: { href: "https://femlove.blog/", label: "femlove.blog" },
     logo: femlove,
   },
   {
-    name: 'Sangfroid Studio',
+    name: "Sangfroid Studio",
     description:
-      'Sangfroid Studio is a creative agency that helps businesses tell their stories through branding, design, and marketing. Using Webflow, I built a website that showcases their amazing work and captures their unique style.',
+      "Sangfroid Studio is a creative agency that helps businesses tell their stories through branding, design, and marketing. Using Webflow, I built a website that showcases their amazing work and captures their unique style.",
     link: {
-      href: 'https://sangfroidstudio.com/',
-      label: 'sangfroidstudio.com',
+      href: "https://sangfroidstudio.com/",
+      label: "sangfroidstudio.com",
     },
     logo: sangfroid,
   },
   {
-    name: 'Culcha',
+    name: "Culcha",
     description:
       "With Webflow, I created a website that's easy to navigate and showcases their expertise.",
-    link: { href: 'https://www.culcha.com/', label: 'culcha.com' },
+    link: { href: "https://www.culcha.com/", label: "culcha.com" },
     logo: culcha,
   },
   {
-    name: 'PARQ',
+    name: "PARQ",
     description:
       "Using my web development skills, I helped create a website that's user-friendly and clearly communicates the benefits of Parq's services.",
-    link: { href: 'https://www.parqhq.com/', label: 'parqhq.com' },
+    link: { href: "https://www.parqhq.com/", label: "parqhq.com" },
     logo: parq,
   },
   {
-    name: 'Euphoria Fest',
+    name: "Euphoria Fest",
     description:
-      'I created a website that captures the energy and excitement of the festival.',
-    link: { href: 'https://www.euphoriafest.com/', label: 'euphoriafest.com' },
+      "I created a website that captures the energy and excitement of the festival.",
+    link: { href: "https://www.euphoriafest.com/", label: "euphoriafest.com" },
     logo: euphoria,
   },
   {
-    name: 'Kriptos',
+    name: "Kriptos",
     description:
-      'Kriptos was one of my first projects and a great learning experience! I had the opportunity to work with this innovative tech startup and build their website from scratch.',
-    link: { href: 'https://www.kriptos.io/', label: 'kriptos.io' },
+      "Kriptos was one of my first projects and a great learning experience! I had the opportunity to work with this innovative tech startup and build their website from scratch.",
+    link: { href: "https://www.kriptos.io/", label: "kriptos.io" },
     logo: kriptos,
   },
 ]
@@ -109,6 +111,9 @@ export default function Projects() {
           ))}
         </ul>
       </SimpleLayout>
+      <Container>
+        <Testimonials />
+      </Container>
     </>
   )
 }
