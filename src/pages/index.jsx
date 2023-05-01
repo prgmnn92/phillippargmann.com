@@ -126,8 +126,10 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
+          data-netlify="true"
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
         />
+        <input type="hidden" name="form-name" value="newsletter-form" />
         <Button type="submit" className="ml-4 flex-none">
           Join
         </Button>
@@ -294,7 +296,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
+            <Newsletter />
             <Resume />
           </div>
         </div>
