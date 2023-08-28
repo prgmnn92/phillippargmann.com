@@ -1,12 +1,12 @@
-import { Fragment, useEffect, useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { Popover, Transition } from '@headlessui/react'
-import clsx from 'clsx'
+import { Fragment, useEffect, useRef } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { Popover, Transition } from "@headlessui/react"
+import clsx from "clsx"
 
-import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.jpg'
+import { Container } from "@/components/Container"
+import avatarImage from "@/images/avatar.jpg"
 
 function CloseIcon(props) {
   return (
@@ -122,8 +122,8 @@ function MobileNavigation(props) {
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
+                {/* <MobileNavItem href="/articles">Articles</MobileNavItem> */}
+                {/* <MobileNavItem href="/projects">Projects</MobileNavItem> */}
                 <MobileNavItem href="/uses">Uses</MobileNavItem>
               </ul>
             </nav>
@@ -142,10 +142,10 @@ function NavItem({ href, children }) {
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          "relative block px-3 py-2 transition",
           isActive
-            ? 'text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400'
+            ? "text-teal-500 dark:text-teal-400"
+            : "hover:text-teal-500 dark:hover:text-teal-400"
         )}
       >
         {children}
@@ -162,8 +162,8 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
+        {/* <NavItem href="/articles">Articles</NavItem> */}
+        {/* <NavItem href="/projects">Projects</NavItem> */}
         <NavItem href="/uses">Uses</NavItem>
       </ul>
     </nav>
@@ -172,18 +172,18 @@ function DesktopNavigation(props) {
 
 function ModeToggle() {
   function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
+    document.documentElement.classList.add("[&_*]:!transition-none")
     window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
+      document.documentElement.classList.remove("[&_*]:!transition-none")
     }, 0)
   }
 
   function toggleMode() {
     disableTransitionsTemporarily()
 
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
     let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
+    let isDarkMode = document.documentElement.classList.toggle("dark")
 
     if (isDarkMode === isSystemDarkMode) {
       delete window.localStorage.isDarkMode
@@ -216,7 +216,7 @@ function AvatarContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+        "h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"
       )}
       {...props}
     />
@@ -228,16 +228,16 @@ function Avatar({ large = false, className, ...props }) {
     <Link
       href="/"
       aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
+      className={clsx(className, "pointer-events-auto")}
       {...props}
     >
       <Image
         src={avatarImage}
         alt=""
-        sizes={large ? '4rem' : '2.25rem'}
+        sizes={large ? "4rem" : "2.25rem"}
         className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
+          "rounded-full bg-zinc-100 object-cover dark:bg-zinc-800",
+          large ? "h-16 w-16" : "h-9 w-9"
         )}
         priority
       />
@@ -246,7 +246,7 @@ function Avatar({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  let isHomePage = useRouter().pathname === "/"
 
   let headerRef = useRef()
   let avatarRef = useRef()
@@ -273,31 +273,31 @@ export function Header() {
       )
 
       if (isInitial.current) {
-        setProperty('--header-position', 'sticky')
+        setProperty("--header-position", "sticky")
       }
 
-      setProperty('--content-offset', `${downDelay}px`)
+      setProperty("--content-offset", `${downDelay}px`)
 
       if (isInitial.current || scrollY < downDelay) {
-        setProperty('--header-height', `${downDelay + height}px`)
-        setProperty('--header-mb', `${-downDelay}px`)
+        setProperty("--header-height", `${downDelay + height}px`)
+        setProperty("--header-mb", `${-downDelay}px`)
       } else if (top + height < -upDelay) {
         let offset = Math.max(height, scrollY - upDelay)
-        setProperty('--header-height', `${offset}px`)
-        setProperty('--header-mb', `${height - offset}px`)
+        setProperty("--header-height", `${offset}px`)
+        setProperty("--header-mb", `${height - offset}px`)
       } else if (top === 0) {
-        setProperty('--header-height', `${scrollY + height}px`)
-        setProperty('--header-mb', `${-scrollY}px`)
+        setProperty("--header-height", `${scrollY + height}px`)
+        setProperty("--header-mb", `${-scrollY}px`)
       }
 
       if (top === 0 && scrollY > 0 && scrollY >= downDelay) {
-        setProperty('--header-inner-position', 'fixed')
-        removeProperty('--header-top')
-        removeProperty('--avatar-top')
+        setProperty("--header-inner-position", "fixed")
+        removeProperty("--header-top")
+        removeProperty("--avatar-top")
       } else {
-        removeProperty('--header-inner-position')
-        setProperty('--header-top', '0px')
-        setProperty('--avatar-top', '0px')
+        removeProperty("--header-inner-position")
+        setProperty("--header-top", "0px")
+        setProperty("--avatar-top", "0px")
       }
     }
 
@@ -320,7 +320,7 @@ export function Header() {
       x = clamp(x, fromX, toX)
 
       setProperty(
-        '--avatar-image-transform',
+        "--avatar-image-transform",
         `translate3d(${x}rem, 0, 0) scale(${scale})`
       )
 
@@ -328,8 +328,8 @@ export function Header() {
       let borderX = (-toX + x) * borderScale
       let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
 
-      setProperty('--avatar-border-transform', borderTransform)
-      setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0)
+      setProperty("--avatar-border-transform", borderTransform)
+      setProperty("--avatar-border-opacity", scale === toScale ? 1 : 0)
     }
 
     function updateStyles() {
@@ -339,12 +339,12 @@ export function Header() {
     }
 
     updateStyles()
-    window.addEventListener('scroll', updateStyles, { passive: true })
-    window.addEventListener('resize', updateStyles)
+    window.addEventListener("scroll", updateStyles, { passive: true })
+    window.addEventListener("resize", updateStyles)
 
     return () => {
-      window.removeEventListener('scroll', updateStyles)
-      window.removeEventListener('resize', updateStyles)
+      window.removeEventListener("scroll", updateStyles)
+      window.removeEventListener("resize", updateStyles)
     }
   }, [isHomePage])
 
@@ -353,8 +353,8 @@ export function Header() {
       <header
         className="pointer-events-none relative z-50 flex flex-col"
         style={{
-          height: 'var(--header-height)',
-          marginBottom: 'var(--header-mb)',
+          height: "var(--header-height)",
+          marginBottom: "var(--header-mb)",
         }}
       >
         {isHomePage && (
@@ -365,24 +365,24 @@ export function Header() {
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
-              style={{ position: 'var(--header-position)' }}
+              style={{ position: "var(--header-position)" }}
             >
               <div
                 className="top-[var(--avatar-top,theme(spacing.3))] w-full"
-                style={{ position: 'var(--header-inner-position)' }}
+                style={{ position: "var(--header-inner-position)" }}
               >
                 <div className="relative">
                   <AvatarContainer
                     className="absolute left-0 top-3 origin-left transition-opacity"
                     style={{
-                      opacity: 'var(--avatar-border-opacity, 0)',
-                      transform: 'var(--avatar-border-transform)',
+                      opacity: "var(--avatar-border-opacity, 0)",
+                      transform: "var(--avatar-border-transform)",
                     }}
                   />
                   <Avatar
                     large
                     className="block h-16 w-16 origin-left"
-                    style={{ transform: 'var(--avatar-image-transform)' }}
+                    style={{ transform: "var(--avatar-image-transform)" }}
                   />
                 </div>
               </div>
@@ -392,11 +392,11 @@ export function Header() {
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
-          style={{ position: 'var(--header-position)' }}
+          style={{ position: "var(--header-position)" }}
         >
           <Container
             className="top-[var(--header-top,theme(spacing.6))] w-full"
-            style={{ position: 'var(--header-inner-position)' }}
+            style={{ position: "var(--header-inner-position)" }}
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
@@ -419,7 +419,7 @@ export function Header() {
           </Container>
         </div>
       </header>
-      {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}
+      {isHomePage && <div style={{ height: "var(--content-offset)" }} />}
     </>
   )
 }

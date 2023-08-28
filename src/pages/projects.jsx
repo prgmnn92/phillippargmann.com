@@ -12,7 +12,7 @@ import femlove from "@/images/logos/femlove.png"
 import { Container } from "@/components/Container"
 import Testimonials from "@/components/Testimonials"
 
-const projects = [
+export const projects = [
   {
     name: "Femlove",
     description:
