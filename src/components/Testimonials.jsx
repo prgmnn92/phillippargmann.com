@@ -1,6 +1,6 @@
 const testimonials = [
   {
-    body: "Phillip is amazing. He crafted a wonderful new site for us in Webflow and supported us through the production process. We will definitely be using him again. Thank you!",
+    body: "Phillip is amazing. He crafted a wonderful new site for us and supported us through the production process. We will definitely be using him again. Thank you!",
     author: {
       name: "Paolo Bugatto",
       position: "Creative Director at Sangfroid",
@@ -8,21 +8,21 @@ const testimonials = [
   },
 
   {
-    body: "Phillip did a great job finishing various details on my Webflow page. He answers quickly, communicates straight forward, brings in own ideas and: all together did an excellent job! Thank you so much!",
+    body: "Phillip did a great job finishing various details on my page. He answers quickly, communicates straight forward, brings in own ideas and: all together did an excellent job! Thank you so much!",
     author: {
       name: "Elke H.",
       position: "Marketer at authenticeco",
     },
   },
   {
-    body: "Phillip was a fantastic help in building and launching our new website. I can only recommend him to anyone looking for a webflow developer!",
+    body: "Phillip was a fantastic help in building and launching our new website. I can only recommend him to anyone looking for a developer!",
     author: {
       name: "Philipp E.",
       position: "CTO at Culcha",
     },
   },
   {
-    body: "Phillip is phenomenal, strong understanding of UX and Webflow and knows how to get the project done!",
+    body: "Phillip is phenomenal, strong understanding of UX and and knows how to get the project done!",
     author: {
       name: "Richard C.",
       position: "Product Manager",
@@ -36,7 +36,7 @@ const testimonials = [
     },
   },
   {
-    body: "Really professional, very reliable and well talented. Philip helped us implement a complex website in Webflow very quickly and efficiently. I Strongly recommend him for any type of development project.",
+    body: "Really professional, very reliable and well talented. Philip helped us implement a complex website very quickly and efficiently. I strongly recommend him for any type of development project.",
     author: {
       name: "Baiju D.",
       position: "Technical Lead at potentiate",
