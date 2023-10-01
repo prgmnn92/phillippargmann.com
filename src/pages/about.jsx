@@ -1,21 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import clsx from "clsx"
 
-import { Container } from '@/components/Container'
+import { Container } from "@/components/Container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+  UpworkIcon,
+} from "@/components/SocialIcons"
+import portraitImage from "@/images/portrait.jpg"
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -97,17 +98,19 @@ export default function About() {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
-                href="https://twitter.com/PargmannPhillip"
-                icon={TwitterIcon}
-              >
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink
-                href="https://www.instagram.com/phillippargmann/"
-                icon={InstagramIcon}
+                href="https://www.upwork.com/freelancers/phillippargmann"
+                aria-label="Hire me on upwork"
+                icon={UpworkIcon}
                 className="mt-4"
               >
-                Follow on Instagram
+                Hire me on Upwork
+              </SocialLink>
+              <SocialLink
+                href="https://twitter.com/PargmannPhillip"
+                icon={TwitterIcon}
+                className="mt-4"
+              >
+                Follow on Twitter
               </SocialLink>
               <SocialLink
                 href="https://github.com/prgmnn92"

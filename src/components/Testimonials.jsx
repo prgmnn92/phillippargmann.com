@@ -42,7 +42,6 @@ const testimonials = [
       position: "Technical Lead at potentiate",
     },
   },
-  // More testimonials...
 ]
 
 export default function Testimonials() {
@@ -54,7 +53,7 @@ export default function Testimonials() {
             Testimonials
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
-            See What My Clients Are Saying
+            What My Clients Are Saying
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
@@ -69,11 +68,6 @@ export default function Testimonials() {
                     <p>{`“${testimonial.body}”`}</p>
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-x-4">
-                    {/* <img
-                      className="w-10 h-10 rounded-full "
-                      src={testimonial.author.imageUrl}
-                      alt=""
-                    /> */}
                     <div>
                       <div className="font-semibold text-zinc-800 dark:text-zinc-100">
                         {testimonial.author.name}
