@@ -55,6 +55,16 @@ export const projects = [
 
 export const personalProjects = [
   {
+    name: "Chat App",
+    description:
+      "A chat app that includes authentication and realtime chat functionality. Built with Next.js, TailwindCSS and Supabase",
+    link: {
+      href: "https://supabase-chat-app-chi.vercel.app/",
+      github: "",
+      label: "Chat app",
+    },
+  },
+  {
     name: "Todo List",
     description:
       "A Todo List built with Next.js, Typescript, TailwindCSS and Supabase",
