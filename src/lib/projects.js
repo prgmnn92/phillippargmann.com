@@ -4,8 +4,16 @@ import sangfroid from "@/images/logos/sangfroid.png"
 import parq from "@/images/logos/parq.png"
 import kriptos from "@/images/logos/kriptos.png"
 import femlove from "@/images/logos/femlove.png"
+import monorail from "@/images/logos/monorail.svg"
 
 export const projects = [
+  {
+    name: "Monorail",
+    description:
+      "Monorail is an investment platform that helps people invest in the stock market. Using Webflow, I created a website that's easy to navigate and showcases their expertise.",
+    link: { href: "https://www.monorail.com/", label: "monorail.com" },
+    logo: monorail,
+  },
   {
     name: "Femlove",
     description:
@@ -54,26 +62,6 @@ export const projects = [
 ]
 
 export const personalProjects = [
-  {
-    name: "Chat App",
-    description:
-      "A chat app that includes authentication and realtime chat functionality. Built with Next.js, TailwindCSS and Supabase",
-    link: {
-      href: "https://supabase-chat-app-chi.vercel.app/",
-      github: "",
-      label: "Chat app",
-    },
-  },
-  {
-    name: "Todo List",
-    description:
-      "A Todo List built with Next.js, Typescript, TailwindCSS and Supabase",
-    link: {
-      href: "https://next-supabase-todolist.vercel.app/",
-      github: "",
-      label: "Todo list",
-    },
-  },
   {
     name: "Next.js E-Commerce Store",
     description: "A e-commerce store built with Next.js & Sanity.io",
