@@ -1,12 +1,5 @@
 import { Head, Html, Main, NextScript } from "next/document"
 
-const gtagScript = `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Y1DWWFQYCP');
-`
-
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -46,14 +39,9 @@ export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-Y1DWWFQYCP"
-        ></script>
-        <script dangerouslySetInnerHTML={{ __html: gtagScript }} />
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
       </Head>
-      <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
+      <body className="flex flex-col h-full bg-zinc-50 dark:bg-black">
         <Main />
         <NextScript />
       </body>
