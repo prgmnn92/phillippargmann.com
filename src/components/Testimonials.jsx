@@ -47,8 +47,8 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-xl text-center">
+      <div className="px-6 mx-auto max-w-7xl lg:px-8">
+        <div className="max-w-xl mx-auto text-center">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-zinc-800 dark:text-zinc-100">
             Testimonials
           </h2>
@@ -56,18 +56,18 @@ export default function Testimonials() {
             What My Clients Are Saying
           </p>
         </div>
-        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+        <div className="flow-root max-w-2xl mx-auto mt-16 sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial, id) => (
               <div
-                key={testimonial.author.handle}
-                className="border-zinc-100 pt-8 dark:border-zinc-700/40 sm:inline-block sm:w-full sm:px-4"
+                key={id}
+                className="pt-8 border-zinc-100 dark:border-zinc-700/40 sm:inline-block sm:w-full sm:px-4"
               >
-                <figure className="rounded-2xl p-8 text-sm leading-6">
+                <figure className="p-8 text-sm leading-6 rounded-2xl">
                   <blockquote className="text-zinc-800 dark:text-zinc-100">
                     <p>{`“${testimonial.body}”`}</p>
                   </blockquote>
-                  <figcaption className="mt-6 flex items-center gap-x-4">
+                  <figcaption className="flex items-center mt-6 gap-x-4">
                     <div>
                       <div className="font-semibold text-zinc-800 dark:text-zinc-100">
                         {testimonial.author.name}

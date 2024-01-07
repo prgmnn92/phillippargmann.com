@@ -27,8 +27,8 @@ function LinkIcon(props) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="p-1 -m-1 group" {...props}>
+      <Icon className="w-6 h-6 transition fill-zinc-500 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
 }
@@ -54,7 +54,7 @@ export default function Home() {
             on learning new things and delivering top-notch customer service to
             my clients.
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="flex gap-6 mt-6">
             <SocialLink
               href="https://www.upwork.com/freelancers/phillippargmann"
               aria-label="Hire me on upwork"
@@ -81,27 +81,27 @@ export default function Home() {
       <Container>
         <div id="projects">
           <div className="pt-24 sm:pt-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-xl text-center">
+            <div className="px-6 mx-auto max-w-7xl lg:px-8">
+              <div className="max-w-xl mx-auto text-center">
                 <h2 className="text-lg font-semibold leading-8 tracking-tight text-zinc-800 dark:text-zinc-100">
                   Client Projects
                 </h2>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
-                  See What I Built
+                  See What I've Built
                 </p>
               </div>
-              <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+              <div className="flow-root max-w-2xl mx-auto mt-16 sm:mt-20 lg:mx-0 lg:max-w-none">
                 <ul
                   role="list"
                   className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
                 >
                   {projects.map((project) => (
                     <Card as="li" key={project.name}>
-                      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                      <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full shadow-md dark:bg-white shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0">
                         <Image
                           src={project.logo}
                           alt=""
-                          className="h-8 w-8"
+                          className="w-8 h-8"
                           unoptimized
                         />
                       </div>
@@ -111,8 +111,8 @@ export default function Home() {
                         </Card.Link>
                       </h2>
                       <Card.Description>{project.description}</Card.Description>
-                      <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                        <LinkIcon className="h-6 w-6 flex-none" />
+                      <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200">
+                        <LinkIcon className="flex-none w-6 h-6" />
                         <span className="ml-2">{project.link.label}</span>
                       </p>
                     </Card>
@@ -126,8 +126,8 @@ export default function Home() {
       <Container>
         <div>
           <div className="pt-24 sm:pt-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-xl text-center">
+            <div className="px-6 mx-auto max-w-7xl lg:px-8">
+              <div className="max-w-xl mx-auto text-center">
                 <h2 className="text-lg font-semibold leading-8 tracking-tight text-zinc-800 dark:text-zinc-100">
                   Personal Projects
                 </h2>
@@ -135,7 +135,7 @@ export default function Home() {
                   What I Do in My Free Time
                 </p>
               </div>
-              <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+              <div className="flow-root max-w-2xl mx-auto mt-16 sm:mt-20 lg:mx-0 lg:max-w-none">
                 <ul
                   role="list"
                   className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
@@ -148,8 +148,8 @@ export default function Home() {
                         </Card.Link>
                       </h2>
                       <Card.Description>{project.description}</Card.Description>
-                      <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                        <LinkIcon className="h-6 w-6 flex-none" />
+                      <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200">
+                        <LinkIcon className="flex-none w-6 h-6" />
                         <span className="ml-2">{project.link.label}</span>
                       </p>
                     </Card>
