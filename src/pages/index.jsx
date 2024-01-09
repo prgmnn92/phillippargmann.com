@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Container>
+      {/* <Container>
         <div>
           <div className="pt-24 sm:pt-32">
             <div className="px-6 mx-auto max-w-7xl lg:px-8">
@@ -159,7 +159,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Container>
+      </Container> */}
       <Container>
         <Testimonials />
       </Container>
